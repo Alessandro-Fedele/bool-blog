@@ -11,6 +11,9 @@
 </header>
 @endsection
 @section('main_content')
+<div class="">
+    <a href="{{route('posts.edit',$post->id)}}">EDIT</a>
+</div>
 <!-- Post content-->
 <article>
     <!-- Post header-->
