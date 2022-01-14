@@ -12,7 +12,16 @@
 @endsection
 @section('main_content')
 
-<a class="btn btn-primary m-3" href="{{ route('posts.edit', $post->id) }}">modifica</a>
+<!-- MODIFICA - EDIT -->
+<a class="btn btn-primary m-3" href="{{ route('posts.edit', $post->id) }}">Modifica</a>
+
+<!-- DELETE -->
+<form action="{{route('posts.destroy', $post->id)}}" method="POST" class="m-3">
+    @csrf
+    @method("DELETE")
+
+    <button type="submit" class="btn btn-danger">Elimina</button>
+</form>
 
 <!-- Post content-->
 <article>
