@@ -8,6 +8,9 @@
         </div>
     </div>
 </div>
+
+@yield('sidebar-content')
+
 <!-- Categories widget-->
 <div class="card mb-4">
     <div class="card-header">Categories</div>
