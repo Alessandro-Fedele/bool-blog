@@ -1,25 +1,35 @@
+@extends('layouts.default')
+@section('title', "blog-boolean")
+@section('page_header')
+<header class="py-5 bg-light border-bottom mb-4">
+  <div class="container">
+    <div class="text-center my-5">
+      <h1 class="fw-bolder">Welcome to Blog Home!</h1>
+      <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
+    </div>
+  </div>
+</header>
+@endsection
 @section('main_content')
 
-<form action="{{ route('posts.update') $post->id}}" method="POST">
+<form action="{{ route('posts.update'), $post->id}}" method="POST">
   @csrf
-  @method('put')
+  @method('PUT')
 
   <div class="mb-3">
     <label for="title" class="form-label">Titolo</label>
-    <input type="text" class="form-control" id="title" name="title" 
-    value="{{ $post->title }}">
+    <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}">
   </div>
 
   <div class="mb-3">
     <label for="subtitle" class="form-label">Sottotitolo</label>
     <input type="text" class="form-control" id="subtitle" name="subtitle" value="{{ $post->suntitle }}">
-    
+
   </div>
 
   <div class="mb-3">
     <label for="content" class="form-label">Contenuto</label>
-    <textarea class="form-control" id="content" name="content"
-      rows="3"></textarea>
+    <textarea class="form-control" id="content" name="content" rows="3"></textarea>
   </div>
 
   <div class="mb-3">
