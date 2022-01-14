@@ -76,11 +76,9 @@ class PostController extends Controller
    */
   public function update(Request $request, Post $post)
   {
-    $post = new Post();
-    $post->fill($request->all());
-    $post->save();
-
-    return redirect()->route("home.index");
+    $data = $request->all();
+    $post->update($data);
+    return redirect()->route('posts.show', $post->id);
   }
 
   /**

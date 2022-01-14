@@ -12,7 +12,7 @@
 @endsection
 @section('main_content')
 
-<form action="{{ route('posts.update'), $post->id}}" method="POST">
+<form action="{{ route('posts.update', $post->id) }}" method="POST">
   @csrf
   @method('PUT')
 
@@ -23,13 +23,13 @@
 
   <div class="mb-3">
     <label for="subtitle" class="form-label">Sottotitolo</label>
-    <input type="text" class="form-control" id="subtitle" name="subtitle" value="{{ $post->suntitle }}">
+    <input type="text" class="form-control" id="subtitle" name="subtitle" value="{{ $post->subtitle }}">
 
   </div>
 
   <div class="mb-3">
     <label for="content" class="form-label">Contenuto</label>
-    <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+    <textarea class="form-control" id="content" name="content" rows="3" value="{{ $post->content }}"></textarea>
   </div>
 
   <div class="mb-3">
